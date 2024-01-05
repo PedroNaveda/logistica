@@ -3,23 +3,18 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
-  const [message, setMessage] = useState("");
+  const [message, setMessage] = useState('');
 
-  useEffect(() =>{
-    fetch("http://localhost:3001/home")
-      .then(res => res.json())
-      .then(data => setMessage(data.message))
-      .catch(err => console.log(err));
+  useEffect(() => {
+    fetch('http://localhost:3001/hello')
+      .then((response) => response.json())
+      .then((data) => setMessage(data.message))
+      .catch((error) => console.error('Error:', error));
   }, []);
 
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          {message}
-        </p>
-      </header>
+      <h1>{message}</h1>
     </div>
   );
 }
