@@ -1,15 +1,17 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
-import { EnvioDto } from './envio.dto';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Repository } from 'typeorm';
+import { Envio } from './envios.entity';
 
 Injectable()
 export class EnviosService {
-  private envios = [];
+  private readonly envios = [];
 
   getAllEnvios() {
     return this.envios;
   }
 
-  createEnvio(envioDto: EnvioDto) {
+  createEnvio(envioDto: Envio) {
     const tarifa = this.calcularTarifa(envioDto.distancia);
     const envio = { ...envioDto, tarifa };
 
