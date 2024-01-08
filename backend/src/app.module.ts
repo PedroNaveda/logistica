@@ -9,7 +9,7 @@ import { Envio } from './envios/entity/envios.entity';
   imports: [
     TypeOrmModule.forRoot({
       type: 'postgres',
-      host: 'localhost',
+      host: 'logistica_postgres_1',
       port: 5434,
       username: 'postgres',
       password: 'postgres',

@@ -21,8 +21,8 @@ exports.AppModule = AppModule = __decorate([
         imports: [
             typeorm_1.TypeOrmModule.forRoot({
                 type: 'postgres',
-                host: 'localhost',
-                port: 5432,
+                host: 'logistica_postgres_1',
+                port: 5434,
                 username: 'postgres',
                 password: '*1nv1s1bl3*',
                 database: 'logistica',

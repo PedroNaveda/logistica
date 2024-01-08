@@ -43,7 +43,6 @@ services:
   init-db:
     image: node:18
     volumes:
-      - ./
       - ./backend:/app
     environment:
       - DATABASE_URL=postgres://postgres:postgres@postgres:5434/postgres
