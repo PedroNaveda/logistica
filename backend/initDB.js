@@ -1,6 +1,6 @@
   const initDB = async () => {
   const pgp = require('pg-promise')();
-  const db = pgp(process.env.DATABASE_URL || 'postgres://postgres:postgres@localhost:5434/logistica');
+  const db = pgp(process.env.DATABASE_URL || 'postgres://postgres:postgres@localhost:5432/logistica');
 
   try {
     // Crea la tabla envios si no existe
@@ -10,9 +10,11 @@
         destinatario VARCHAR(255) NOT NULL,
         remitente VARCHAR(255) NOT NULL,
         contenido TEXT NOT NULL,
-        fecha_envio DATE NOT NULL,
+        fecha_envio TIMESTAMP NOT NULL,
         distancia DECIMAL NOT NULL,
-        tarifa DECIMAL NOT NULL
+        tarifa DECIMAL NOT NULL,
+        created_at TIMESTAMP,
+        updated_at TIMESTAMP
       );
     `);
 

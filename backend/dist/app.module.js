@@ -21,10 +21,10 @@ exports.AppModule = AppModule = __decorate([
         imports: [
             typeorm_1.TypeOrmModule.forRoot({
                 type: 'postgres',
-                host: 'logistica_postgres_1',
-                port: 5434,
+                host: 'localhost',
+                port: 5432,
                 username: 'postgres',
-                password: '*1nv1s1bl3*',
+                password: 'postgres',
                 database: 'logistica',
                 entities: [envios_entity_1.Envio],
                 synchronize: true,
