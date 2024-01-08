@@ -4,4 +4,5 @@ export class CreateEnvioDto {
     contenido: string;
     fecha_envio: string;
     distancia: number;
+    tarifa: number;
   }

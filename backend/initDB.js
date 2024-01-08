@@ -11,7 +11,7 @@
         remitente VARCHAR(255) NOT NULL,
         contenido TEXT NOT NULL,
         fecha_envio DATE NOT NULL,
-        distancia INTEGER NOT NULL,
+        distancia DECIMAL NOT NULL,
         tarifa DECIMAL NOT NULL
       );
     `);
