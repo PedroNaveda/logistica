@@ -126,6 +126,7 @@ import {
                   <th>Contenido</th>
                   <th>Fecha de Envio</th>
                   <th>Distancia</th>
+                  <th>Tarifa</th>
                   <th>Acción</th>
                 </tr>
               </thead>
@@ -139,6 +140,7 @@ import {
                     <td>{dato.contenido}</td>
                     <td>{dato.fecha_envio}</td>
                     <td>{dato.distancia}</td>
+                    <td>{dato.tarifa}</td>
                     <td>
                     <Button style={{ color: '#000', backgroundColor: 'yellow' }} onClick={() => this.mostrarModalActualizar(dato)}>
                       Editar
