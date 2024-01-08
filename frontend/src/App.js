@@ -3,8 +3,7 @@ import EnviosFormList from './components/EnviosFormList';
 
 function App() {
   return (
-    <div className="App">
-      <h1>Logística de Envíos</h1>
+    <div className="app-container">
       <EnviosFormList />
     </div>
   );

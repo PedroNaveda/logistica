@@ -1,13 +1,9 @@
-FROM node:19.0.1
-
-EXPOSE 3001
+FROM node:19
 
 WORKDIR /backend
 
-COPY package.json package-lock*.json ./
+COPY . .
 
 RUN npm install
 
-COPY . . 
-
-CMD [ "npm", "npm start" ]
+CMD ["npm", "start"]

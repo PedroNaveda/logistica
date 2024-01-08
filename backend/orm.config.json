@@ -1,0 +1,16 @@
+{
+    "type": "postgres",
+    "host": "localhost",
+    "port": 5434,
+    "username": "postgres",
+    "password": "postgres",
+    "database": "logistica",
+    "entities": ["dist/**/*.entity{.ts,.js}"],
+    "synchronize": true,
+    "logging": true,
+    "cli": {
+      "entitiesDir": "src/modules",
+      "migrationsDir": "src/database/migrations",
+      "subscribersDir": "src/database/subscribers"
+    }
+  }

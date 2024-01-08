@@ -1,25 +1,25 @@
 import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
 
-Entity()
+@Entity()
 export class Envio {
-  PrimaryGeneratedColumn()
+  @PrimaryGeneratedColumn()
   id: number;
 
-  Column()
+  @Column()
   destinatario: string;
 
-  Column()
+  @Column()
   remitente: string;
 
-  Column()
+  @Column()
   contenido: string;
 
-  Column()
-  fecha_envio: Date;
+  @Column()
+  fecha_envio: string;
 
-  Column()
+  @Column()
   distancia: number;
 
-  Column()
+  @Column()
   tarifa: number;
 }

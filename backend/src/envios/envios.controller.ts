@@ -1,24 +1,30 @@
-import { Controller, Get, Post, Body } from '@nestjs/common';
+import { Controller, Get, Post, Body, Put, Param, Delete } from '@nestjs/common';
 import { EnviosService } from './envios.service';
-import { EnvioDto } from './envio.dto';
+import { CreateEnvioDto } from './dto/create-envio.dto';
 
-Controller('envios')
+@Controller('envios')
 export class EnviosController {
   constructor(private readonly enviosService: EnviosService) {}
 
-getAll() {
-    return this.enviosService.getAllEnvios();
+  @Post()
+  create(@Body() createEnvioDto: CreateEnvioDto) {
+    const calculatedTarifa = this.enviosService.calcularTarifa(createEnvioDto.distancia);
+    const envioWithTarifa = { ...createEnvioDto, tarifa: calculatedTarifa };
+    return this.enviosService.create(envioWithTarifa);
   }
 
-Post(envioDto: EnvioDto) {
-    return this.enviosService.createEnvio(envioDto);
+  @Get()
+  findAll() {
+    return this.enviosService.findAll();
   }
 
-getTarifas() {
-    return this.enviosService.getTarifas();
+  @Put(':id')
+  update(@Param('id') id: number, @Body() updateEnvioDto: CreateEnvioDto) {
+    return this.enviosService.update(id, updateEnvioDto);
   }
 
-getTarifaById(@Param('id') id: string) {
-    return this.enviosService.getTarifaById(id);
+  @Delete(':id')
+  delete(@Param('id') id: number) {
+    return this.enviosService.delete(id);
   }
 }
